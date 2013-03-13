@@ -2,7 +2,7 @@
 
 <!-- Eric Mareth, 1303, ASD CRUD Application-->
 
-<html>
+<html lang="en">
 
 	<head>
 		<meta charset="utf-8">
@@ -11,11 +11,11 @@
 		
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width-device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<meta http-equiv="cleartype" content="on">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="css/main.css">
 		
 		<script src="js/libs/modernizr.custom.min.js"></script>
 		
@@ -68,18 +68,18 @@
 				<form action="" method="post" id="newImage">
 
 					<section data-role="fieldcontain">
-						<label for="imgNum">Image Number:</label>
-						<input type="number" name="imgNum" id="imgNum"/>
+						<label for="imgNum">Image Number</label>
+						<input type="number" name="imgNum" id="imgNum" class="required"/>
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="subject">Subject:</label>
+						<label for="subject">Subject</label>
 						<input type="text" name="subject" id="subject" placeholder="Cool Building" class="required"/>
 					</section>
 					
 					<section data-role="fieldcontain">
 						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-							<legend>ISO:</legend>
+							<legend>ISO</legend>
 								<input type="radio" value="100" name="iso" id="iso100"/>
 								<label for="iso100">100</label>
 								<input type="radio" value="200" name="iso" id="iso200"/>
@@ -98,17 +98,17 @@
 					</section>
 
 					<section data-role="fieldcontain">
-						<label for="fstop">fStop / Aperture:</label>
+						<label for="fstop">fStop / Aperture</label>
 						<input type="text" name="fstop" id="fstop" placeholder="f13"/>
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="shutter">Shutter Speed:</label>
-						<input type="text" name="shutter" id="shutter" placeholder="1/4000"/>
+						<label for="shutter">Shutter Speed</label>
+						<input type="text" name="shutter" id="shutter" placeholder="1/4000" class="required number"/>
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="setting">Setting:</label>
+						<label for="setting">Setting</label>
 						<select name="setting" id="setting" data-native-menu="false">
 							<option data-placeholder="true">--What Setting Was Used?--</option>
 							<option value="manual">Manual</option>
@@ -126,14 +126,16 @@
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="date">Date:</label>
+						<label for="date">Date</label>
 						<input type="text" name="date" id="date" value=""/>
 					</section>
 					
-					<footer class="ui-grid-a">
+					<section class="ui-grid-a">
 						<input type="submit" value="Submit" data-inline="true" />
 						<a href="#mainPage" data-inline="true">Cancel</a>
-					</footer>
+					</section>
+					
+					<a href="#formErrors" id="errorDialog" data-rel="dialog" data-transition="pop">Errors On Page</a>
 				
 				</form>
 				
@@ -174,13 +176,25 @@
 			</footer>
 		
 		</div>
+		
+<!--Errors dialog-->
+
+	<section data-role="dialog" id="formErrors">
+		<div data-role="header" data-position="fixed">
+			<h1>Missed Settings:</h1>
+		</div>
+		<div data-role="content">
+			<p>Check your fields</p>
+		</div>
+		
+	</section>
 
 	
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 		<script src="js/libs/jquery.validate.min.js"></script>
-		<script src="main.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 
 </html>
