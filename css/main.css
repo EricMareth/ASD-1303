@@ -4,8 +4,8 @@ Character Note CRUD Application
 */
 
 label.error{
-	display: inline;
-	margin: 50px 0px;
+	display: block;
+	margin: 10px 0px;
 	color: maroon;
 }
 

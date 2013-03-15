@@ -69,7 +69,7 @@
 
 					<section data-role="fieldcontain">
 						<label for="imgNum">Image Number</label>
-						<input type="number" name="imgNum" id="imgNum" class="required"/>
+						<input type="number" name="imgNum" id="imgNum" class="required number"/>
 					</section>
 					
 					<section data-role="fieldcontain">
@@ -92,8 +92,6 @@
 								<label for="iso1600">1600</label>
 								<input type="radio" value="3200" name="iso" id="iso3200"/>
 								<label for="iso3200">3200</label>
-								<!--input type="radio" value="hi" name="iso" id="isoHI"/>
-								<label for="isoHI">HI</label-->
 						</fieldset>
 					</section>
 
@@ -104,33 +102,33 @@
 					
 					<section data-role="fieldcontain">
 						<label for="shutter">Shutter Speed</label>
-						<input type="text" name="shutter" id="shutter" placeholder="1/4000" class="required number"/>
+						<input type="text" name="shutter" id="shutter" placeholder="1/4000" class="required"/>
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="setting">Setting</label>
+						<label for="setting"> Camera Setting</label>
 						<select name="setting" id="setting" data-native-menu="false">
 							<option data-placeholder="true">--What Setting Was Used?--</option>
-							<option value="manual">Manual</option>
-							<option value="aperture">Aperture Priority</option>
-							<option value="shutter">Shutter Priority</option>
-							<option value="program">Program Mode</option>
-							<option value="auto">Auto</option>
-							<option value="noflash">Cancel Flash</option>
-							<option value="portrait">Portrait</option>
-							<option value="landscape">Landscape</option>
-							<option value="night">Night Shot</option>
-							<option value="macro">Macro</option>
-							<option value="other">Other</option>
+							<option value="Manual">Manual</option>
+							<option value="Aperture Priority">Aperture Priority</option>
+							<option value="Shutter Priority">Shutter Priority</option>
+							<option value="Program Mode">Program Mode</option>
+							<option value="Auto">Auto</option>
+							<option value="Cancel Flash">Cancel Flash</option>
+							<option value="Portrait">Portrait</option>
+							<option value="Landscape">Landscape</option>
+							<option value="Night Shot">Night Shot</option>
+							<option value="Macro">Macro</option>
+							<option value="Other">Other</option>
 						</select>
 					</section>
 					
 					<section data-role="fieldcontain">
-						<label for="date">Date</label>
-						<input type="text" name="date" id="date" value=""/>
+						<label for="date">Date Taken</label>
+						<input type="date" name="date" id="date" value=""/>
 					</section>
 					
-					<section class="ui-grid-a">
+					<section>
 						<input type="submit" value="Submit" data-inline="true" />
 						<a href="#mainPage" data-inline="true">Cancel</a>
 					</section>
@@ -162,19 +160,27 @@
 			<section data-role="content">
 				<header>
 					<h1>All Image Records</h1>
+					<p>
+						<a href="#addImage" data-inline="true">Add Image</a>
+						<a href="#" id="clearAll" data-inline="true">Clear Data</a>
+					</p>
 				</header>
+				
+				<section id="records">
+					
+				</section>
+				
 			</section>
-
+			
 			<footer data-role="footer" data-position="fixed" data-id="mainPage">
 				<nav data-role="navbar">
 					<ul>
-						<li><a href="#mainPage" data-icon="home"></a></li>
+						<li><a href="#mainPage" id="main" data-icon="home"></a></li>
 						<li><a href="#addImage" data-icon="plus"></a></li>
 						<li><a href="#allImages" data-icon="bars" class="ui-btn-active"></a></li>
 					</ul>
 				</nav>
 			</footer>
-		
 		</div>
 		
 <!--Errors dialog-->
