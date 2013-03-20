@@ -1,0 +1,14 @@
+/*Eric Mareth
+ASD 1303
+Character Note CRUD Application
+*/
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: maroon;
+}
+
+#errorDialog{
+	display: none;
+}
