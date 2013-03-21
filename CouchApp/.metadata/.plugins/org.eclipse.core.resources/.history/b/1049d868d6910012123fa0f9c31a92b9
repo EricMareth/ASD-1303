@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<!-- Eric Mareth, 1303, ASD CRUD Application-->
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Exposure Track</title>
+		
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<meta http-equiv="cleartype" content="on">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<link rel="stylesheet" href="css/main.css">
+		
+		<script src="js/libs/modernizr.custom.min.js"></script>
+		
+	</head>
+
+	<body>
+
+<!--Main Page-->
+		<div data-role="page" id="mainPage">
+			<header data-role="header" data-position="fixed">
+				<h1>Exposure Track</h1>
+			</header>
+			
+			<section data-role="content"> 
+				<header>
+					<h1>Image Records</h1>
+					<p data-role="fieldcontain">
+						<a href="#addImage" data-role="button" data-icon="plus" data-iconpos="right">Add New Record</a>
+					</p>
+					
+					<p data-role="fieldcontain">
+						<a href="#allImages" data-icon="bars" data-iconpos="right">Record Database</a>
+					</p>
+				</header>
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="mainPage">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#mainPage" data-icon="home" class="ui-btn-active"></a></li>
+						<li><a href="#addImage" data-icon="plus"></a></li>
+						<li><a href="#allImages" data-icon="bars"></a></li>
+					</ul>
+				</nav>
+			</footer>
+		
+		</div>
+
+<!--Add Image Page-->		
+		<div data-role="page" id="addImage" data-add-back-btn="true">
+			<header data-role="header" data-position="fixed">
+				<h1>Exposure Track</h1>
+			</header>
+			
+			<section data-role="content">
+				<header>
+					<h1>Add Image</h1>
+				</header>
+				
+				<form action="" method="post" id="newImage">
+
+					<section data-role="fieldcontain">
+						<label for="imgNum">Image Number</label>
+						<input type="number" name="imgNum" id="imgNum" class="required number"/>
+					</section>
+					
+					<section data-role="fieldcontain">
+						<label for="subject">Subject</label>
+						<input type="text" name="subject" id="subject" placeholder="Cool Building" class="required"/>
+					</section>
+					
+					<section data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+							<legend>ISO</legend>
+								<input type="radio" value="100" name="iso" id="iso100"/>
+								<label for="iso100">100</label>
+								<input type="radio" value="200" name="iso" id="iso200"/>
+								<label for="iso200">200</label>
+								<input type="radio" value="400" name="iso" id="iso400"/>
+								<label for="iso400">400</label>
+								<input type="radio" value="800" name="iso" id="iso800"/>
+								<label for="iso800">800</label>
+								<input type="radio" value="1600" name="iso" id="iso1600"/>
+								<label for="iso1600">1600</label>
+								<input type="radio" value="3200" name="iso" id="iso3200"/>
+								<label for="iso3200">3200</label>
+						</fieldset>
+					</section>
+
+					<section data-role="fieldcontain">
+						<label for="fstop">fStop / Aperture</label>
+						<input type="text" name="fstop" id="fstop" placeholder="f13"/>
+					</section>
+					
+					<section data-role="fieldcontain">
+						<label for="shutter">Shutter Speed</label>
+						<input type="text" name="shutter" id="shutter" placeholder="1/4000" class="required"/>
+					</section>
+					
+					<section data-role="fieldcontain">
+						<label for="setting"> Camera Setting</label>
+						<select name="setting" id="setting" data-native-menu="false">
+							<option data-placeholder="true">--What Setting Was Used?--</option>
+							<option value="Manual">Manual</option>
+							<option value="Aperture Priority">Aperture Priority</option>
+							<option value="Shutter Priority">Shutter Priority</option>
+							<option value="Program Mode">Program Mode</option>
+							<option value="Auto">Auto</option>
+							<option value="Cancel Flash">Cancel Flash</option>
+							<option value="Portrait">Portrait</option>
+							<option value="Landscape">Landscape</option>
+							<option value="Night Shot">Night Shot</option>
+							<option value="Macro">Macro</option>
+							<option value="Other">Other</option>
+						</select>
+					</section>
+					
+					<section data-role="fieldcontain">
+						<label for="date">Date Taken</label>
+						<input type="date" name="date" id="date" value=""/>
+					</section>
+					
+					<section>
+						<input type="submit" value="Submit" data-inline="true" />
+						<a href="#mainPage" data-inline="true">Cancel</a>
+					</section>
+					
+					<a href="#formErrors" id="errorDialog" data-rel="dialog" data-transition="pop">Errors On Page</a>
+				
+				</form>
+				
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="mainPage">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#mainPage" data-icon="home"></a></li>
+						<li><a href="#addImage" data-icon="plus" class="ui-btn-active"></a></li>
+						<li><a href="#allImages" data-icon="bars"></a></li>
+					</ul>
+				</nav>
+			</footer>
+		
+		</div>
+
+<!--All Records Page-->		
+		<div data-role="page" id="allImages" data-add-back-btn="true">
+			<header data-role="header" data-position="fixed">
+				<h1>Exposure Track</h1>
+			</header>
+			
+			<section data-role="content">
+				<header>
+					<h1>All Image Records</h1>
+					<p>
+						<a href="#addImage" data-inline="true">Add Image</a>
+						<a href="#" id="clearAll" data-inline="true">Clear Data</a>
+					</p>
+				</header>
+				
+				<section>
+					<ul id="records" data-role="listview">
+					</ul>
+				</section>
+				
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="mainPage">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#mainPage" id="main" data-icon="home"></a></li>
+						<li><a href="#addImage" data-icon="plus"></a></li>
+						<li><a href="#allImages" data-icon="bars" class="ui-btn-active"></a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+		
+<!--Errors dialog-->
+
+	<section data-role="dialog" id="formErrors">
+		<div data-role="header" data-position="fixed">
+			<h1>Missed Settings:</h1>
+		</div>
+		<div data-role="content">
+			<p>Check your fields</p>
+		</div>
+		
+	</section>
+
+	
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+		<script src="js/libs/jquery.validate.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+
+</html>

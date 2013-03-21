@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 1 resources to &apos;_attachments&apos;" description="Move 1 resources to &apos;_attachments&apos;" destination="app/_attachments" element1="app/_attachments/js/main.js" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1363835984355" updateReferences="true"/>
+</session>

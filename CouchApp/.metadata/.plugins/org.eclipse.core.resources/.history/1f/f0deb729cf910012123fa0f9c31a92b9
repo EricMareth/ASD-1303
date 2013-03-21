@@ -1,0 +1,9 @@
+function(doc) {
+  if (doc.type === "photo") {
+    emit(doc._id, {
+    	"Image Number": doc.imgNum,
+    	"Subject": doc.subject,
+    	"Date": doc.date 
+    });
+  }
+};

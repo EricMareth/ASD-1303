@@ -1,0 +1,10 @@
+{
+  "env": {
+    "exptrack": {
+      "db": "http://127.0.0.1:5984/imagesbase"
+    },
+    "cloudant": {
+      "db": "https://tratchertandotheneakence:mnWSYY7NYaWAxSSQajtK2ffC@ericmareth.cloudant.com/exposure_track"
+    }
+  }
+}
